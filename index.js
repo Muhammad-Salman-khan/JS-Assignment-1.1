@@ -223,15 +223,50 @@ Apply them to an array transformation */
 // Create a custom iterable object and manually iterate over it using  for..of .
 // The iterable should return a controlled sequence of values.
 // Section 4: Iterators & for..of (started!)
-const aboutMeObject = {
-  name: "Hachiman",
-  Age: 19,
-  skills: ["Html", "css", "javascript", "react", "tailwindcss"],
+// const aboutMeObject = {
+//   name: "Hachiman",
+//   Age: 19,
+//   skills: ["Html", "css", "javascript", "react", "tailwindcss"],
+//   [Symbol.iterator]: function () {
+//     let aboutMeObject2 = {
+//       name: this.name,
+//       Age: this.Age,
+//       Skills: this.skills,
+//     };
+//     let i = 0;
+//     return {
+//       next: function () {
+//         i++;
+//         return {
+//           done: i > 1 && true,
+//           value: `my name is ${aboutMeObject2.name} and my Age is ${aboutMeObject2.Age} and my skills are: ${aboutMeObject2.Skills}`,
+//         };
+//       },
+//     };
+//   },
+// };
+// for (const myValues of aboutMeObject) {
+//   console.log(myValues);
+// }
+// Section 4: Iterators & for..of (Completed!)
+
+// Task 4.2 – Comparing Loops
+// Use the same data set and iterate using:
+// for
+// for..in
+// for..of
+// Log what each loop outputs and compare results
+// Use the same data set and iterate using:
+// Task 4.2 – Comparing Loops(started!)
+const newObjIterator = {
+  course: "Web & dev",
+  rollNo: 19303,
+  whatsLeft: ["Nextjs", "Nodejs", "Express"],
   [Symbol.iterator]: function () {
-    let aboutMeObject2 = {
-      name: this.name,
-      Age: this.Age,
-      Skills: this.skills,
+    let newObj = {
+      course: this.course,
+      rollNo: this.rollNo,
+      whatsLeftinCouse: this.whatsLeft,
     };
     let i = 0;
     return {
@@ -239,13 +274,23 @@ const aboutMeObject = {
         i++;
         return {
           done: i > 1 && true,
-          value: `my name is ${aboutMeObject2.name} and my Age is ${aboutMeObject2.Age} and my skills are: ${aboutMeObject2.Skills}`,
+          value: `${newObj.course} ${newObj.rollNo} ${newObj.whatsLeftinCouse} `,
         };
       },
     };
   },
 };
-for (const myValues of aboutMeObject) {
-  console.log(myValues);
+for (let i = 0; i < newObjIterator; i++) {
+  console.log(`for loop`, i);
 }
-// Section 4: Iterators & for..of (Completed!)
+for (const i of newObjIterator) {
+  console.log(`for of loop`, i);
+}
+for (const i2 in newObjIterator) {
+  console.log(`for in loop`, i2);
+}
+console.log(
+  "for loop doesnt work newObjIterator coz it will work with known numbers\n and for of loop works correctly coz we told them to work like itrate over object and we know how the flow will work \n and for in loop worked but we only recevied key because it will read values",
+);
+
+// Task 4.2 – Comparing Loops(Completed!)
