@@ -217,3 +217,35 @@ Apply them to an array transformation */
 // );
 
 // Task 3.3 – Arrow Functions in Callbacks (Completed!)
+
+// Section 4: Iterators & for..of
+// Task 4.1 – Manual Iteration
+// Create a custom iterable object and manually iterate over it using  for..of .
+// The iterable should return a controlled sequence of values.
+// Section 4: Iterators & for..of (started!)
+const aboutMeObject = {
+  name: "Hachiman",
+  Age: 19,
+  skills: ["Html", "css", "javascript", "react", "tailwindcss"],
+  [Symbol.iterator]: function () {
+    let aboutMeObject2 = {
+      name: this.name,
+      Age: this.Age,
+      Skills: this.skills,
+    };
+    let i = 0;
+    return {
+      next: function () {
+        i++;
+        return {
+          done: i > 1 && true,
+          value: `my name is ${aboutMeObject2.name} and my Age is ${aboutMeObject2.Age} and my skills are: ${aboutMeObject2.Skills}`,
+        };
+      },
+    };
+  },
+};
+for (const myValues of aboutMeObject) {
+  console.log(myValues);
+}
+// Section 4: Iterators & for..of (Completed!)
