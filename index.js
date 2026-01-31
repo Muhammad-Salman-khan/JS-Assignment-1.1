@@ -258,39 +258,77 @@ Apply them to an array transformation */
 // Log what each loop outputs and compare results
 // Use the same data set and iterate using:
 // Task 4.2 – Comparing Loops(started!)
-const newObjIterator = {
-  course: "Web & dev",
-  rollNo: 19303,
-  whatsLeft: ["Nextjs", "Nodejs", "Express"],
+// const newObjIterator = {
+//   course: "Web & dev",
+//   rollNo: 19303,
+//   whatsLeft: ["Nextjs", "Nodejs", "Express"],
+//   [Symbol.iterator]: function () {
+//     let newObj = {
+//       course: this.course,
+//       rollNo: this.rollNo,
+//       whatsLeftinCouse: this.whatsLeft,
+//     };
+//     let i = 0;
+//     return {
+//       next: function () {
+//         i++;
+//         return {
+//           done: i > 1 && true,
+//           value: `${newObj.course} ${newObj.rollNo} ${newObj.whatsLeftinCouse} `,
+//         };
+//       },
+//     };
+//   },
+// };
+// for (let i = 0; i < newObjIterator; i++) {
+//   console.log(`for loop`, i);
+// }
+// for (const i of newObjIterator) {
+//   console.log(`for of loop`, i);
+// }
+// for (const i2 in newObjIterator) {
+//   console.log(`for in loop`, i2);
+// }
+// console.log(
+//   "for loop doesnt work newObjIterator coz it will work with manual known values and the logic behind is i = 0 i < newObjIterator so it will be like this 0 < NAN so it become false and won't work\n and for of loop works correctly coz we told them to work like itrate over object and we know how the flow will work \n and for in loop worked but we only recevied key because it will read values",
+// );
+
+// Task 4.2 – Comparing Loops(Completed!)
+
+// Task 4.3 – Real-World Iterator Usage
+// Simulate a real-world scenario (e.g., queue, playlist, task list) and iterate over it using  for..of .
+// Focus on clarity and structure.
+// Task 4.3 – Real-World Iterator Usage (Started!)
+const tasklist = {
+  tasks: [
+    { id: 1, task: "I need to make my body" },
+    { id: 2, task: "I need to buy a new Laptop" },
+    { id: 3, task: "I want to earn 10000's dollar" },
+  ],
   [Symbol.iterator]: function () {
-    let newObj = {
-      course: this.course,
-      rollNo: this.rollNo,
-      whatsLeftinCouse: this.whatsLeft,
-    };
     let i = 0;
+    let taskLists = this.tasks;
     return {
-      next: function () {
-        i++;
+      next() {
+        if (i < taskLists.length) {
+          return {
+            value: taskLists[i++],
+            done: false,
+          };
+        }
         return {
-          done: i > 1 && true,
-          value: `${newObj.course} ${newObj.rollNo} ${newObj.whatsLeftinCouse} `,
+          done: true,
+          value: undefined,
         };
       },
     };
   },
 };
-for (let i = 0; i < newObjIterator; i++) {
-  console.log(`for loop`, i);
-}
-for (const i of newObjIterator) {
-  console.log(`for of loop`, i);
-}
-for (const i2 in newObjIterator) {
-  console.log(`for in loop`, i2);
+for (const elem of tasklist) {
+  console.log(elem);
 }
 console.log(
-  "for loop doesnt work newObjIterator coz it will work with manual known values and the logic behind is i = 0 i < newObjIterator so it will be like this 0 < NAN so it become false and won't work\n and for of loop works correctly coz we told them to work like itrate over object and we know how the flow will work \n and for in loop worked but we only recevied key because it will read values",
+  `so what we did here we create a obj and inside that object we create array objec for tasks and we wrote [Symbol.iterator] and inside we create a variable name taskLists and access it through this.tasks and also we create a variable i for iteration and we went inside next function and add a conditon if a  i < tasklist.length well retun value: taskLists[i++] and done false so it will iterator till the last index starting from 0 and we  went outside of the conditon and return  done true and value null done is boolean and value is array of object  `,
 );
 
-// Task 4.2 – Comparing Loops(Completed!)
+// Task 4.3 – Real-World Iterator Usage (Completed!)
