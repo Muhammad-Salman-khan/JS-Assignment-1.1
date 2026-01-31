@@ -129,26 +129,52 @@
 // Grade boundaries
 // Avoid string concatenation completely.
 // Task 2.2 – Conditional Templates (Started!)
-const checkResult = (grade) => {
-  if (grade >= 92) {
-    return `Outstanding performance!.You passed with a Highest score:${grade}/100.`;
-  }
-  if (grade >= 80) {
-    return `Good job!.You passed with a good score:${grade}/100.`;
-  }
-  if (grade >= 60) {
-    return `You passed with a score:${grade}/100. Good`;
-  }
-  if (grade >= 50) {
-    return `You passed with a score:${grade}/100.need littel inprovement`;
-  }
-  if (grade >= 30) {
-    return `You Bariely Passed with a score:${grade}/100.Poor performance`;
-  }
-  if (grade < 30) {
-    return `You Failed with a score: ${grade}/100.`;
-  }
-};
-console.log(checkResult(95));
-
+// const checkResult = (grade) => {
+//   if (grade >= 92) {
+//     return `Outstanding performance!.You passed with a Highest score:${grade}/100.`;
+//   }
+//   if (grade >= 80) {
+//     return `Good job!.You passed with a good score:${grade}/100.`;
+//   }
+//   if (grade >= 60) {
+//     return `You passed with a score:${grade}/100. Good`;
+//   }
+//   if (grade >= 50) {
+//     return `You passed with a score:${grade}/100.need littel inprovement`;
+//   }
+//   if (grade >= 30) {
+//     return `You Bariely Passed with a score:${grade}/100.Poor performance`;
+//   }
+//   if (grade < 30) {
+//     return `You Failed with a score: ${grade}/100.`;
+//   }
+// };
+// console.log(checkResult(95));
 // Task 2.2 – Conditional Templates (Completed!)
+
+// Section 3: Arrow Functions (Behavior Matters)
+// Task 3.1 – Arrow vs Regular Function
+// Create an object with:
+// One regular function
+// One arrow function
+// Both should attempt to access  this .
+// Log results and compare behavior.
+
+// Task 3.1 – Arrow vs Regular Function (Started!)
+const myObject = {
+  name: "Hachiman",
+  regularFuntion: function () {
+    return `Regular Function ${this.name}`;
+  },
+  arrowFunction: () => {
+    return `arrow Funtion ${this.name}`;
+  },
+};
+console.log(myObject.regularFuntion());
+console.log(myObject.arrowFunction());
+
+console.log(
+  `regular function can access this.value because javascript assign them at call time \n and for arrow function javascript never assign "this". it simpley inherate it from it surrounding scope`,
+);
+
+// Task 3.1 – Arrow vs Regular Function (Completed!)
