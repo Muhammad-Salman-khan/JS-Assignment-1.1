@@ -186,13 +186,34 @@ Use explicit return
 Apply them to an array transformation */
 
 // Task 3.2 – Implicit vs Explicit Return (Started!)
-const MyArr = [110, 103];
-const MyFun = MyArr.map((e) => e * 10);
-const arrowFuntionExplicte = MyArr.map((e) => {
-  const result = e + (100 * 4) / 5;
-  return result;
-});
-console.log(`implicit arrow Function`, MyFun);
-console.log(`Explicit Arrow Function`, arrowFuntionExplicte);
+// const MyArr = [110, 103];
+// const MyFun = MyArr.map((e) => e * 10);
+// const arrowFuntionExplicte = MyArr.map((e) => {
+//   const result = e + (100 * 4) / 5;
+//   return result;
+// });
+// console.log(`implicit arrow Function`, MyFun);
+// console.log(`Explicit Arrow Function`, arrowFuntionExplicte);
 
 // Task 3.2 – Implicit vs Explicit Return (Completed!)
+
+// Task 3.3 – Arrow Functions in Callbacks
+// Rewrite a callback-based operation twice:
+// Once using a normal function
+// Once using an arrow function
+// Observe readability and behavior diferences.
+
+// Task 3.3 – Arrow Functions in Callbacks (Started!)
+// const scr = [1, 2, 4];
+
+// const CallbacksNormalFuntion = scr.map(function (a, b) {
+//   return a * b;
+// });
+// const CallbacksArrowFuntion = scr.map((a, b) => a * b);
+// console.log(CallbacksNormalFuntion);
+// console.log(CallbacksArrowFuntion);
+// console.log(
+//   `Both produce the same ans. the readability is the main part one is long and have to define funtion and it will take 3 lines  and the other one is one line and easy to read and work with it`,
+// );
+
+// Task 3.3 – Arrow Functions in Callbacks (Completed!)
