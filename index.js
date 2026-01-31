@@ -290,7 +290,7 @@ for (const i2 in newObjIterator) {
   console.log(`for in loop`, i2);
 }
 console.log(
-  "for loop doesnt work newObjIterator coz it will work with known numbers\n and for of loop works correctly coz we told them to work like itrate over object and we know how the flow will work \n and for in loop worked but we only recevied key because it will read values",
+  "for loop doesnt work newObjIterator coz it will work with manual known values and the logic behind is i = 0 i < newObjIterator so it will be like this 0 < NAN so it become false and won't work\n and for of loop works correctly coz we told them to work like itrate over object and we know how the flow will work \n and for in loop worked but we only recevied key because it will read values",
 );
 
 // Task 4.2 – Comparing Loops(Completed!)
