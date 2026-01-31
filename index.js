@@ -76,32 +76,49 @@
 // Your output order must clearly show why the behavior difers
 
 // Task 1.3 – Loop Behavior Test (Started!)
-for (var i = 0; i < 5; i++) {
-  setTimeout(
-    () => console.log(`[Var] variable output: ${i} `),
-    (i * 130 - 2 + 12) / 30 + i,
-  );
-}
+// for (var i = 0; i < 5; i++) {
+//   setTimeout(
+//     () => console.log(`[Var] variable output: ${i} `),
+//     (i * 130 - 2 + 12) / 30 + i,
+//   );
+// }
 
-for (let elem = 0; elem < 5; elem++) {
-  setTimeout(
-    () => console.log(`[let] variable output: ${elem}`),
-    (elem * 160) / 42,
-  );
-}
+// for (let elem = 0; elem < 5; elem++) {
+//   setTimeout(
+//     () => console.log(`[let] variable output: ${elem}`),
+//     (elem * 160) / 42,
+//   );
+// }
 
-for (const key of [0, 1, 2, 3, 4]) {
-  setTimeout(
-    () => console.log(`[const] variable output: ${key}`),
-    (key * 200) / 22,
-  );
-}
-setTimeout(
-  () =>
-    console.log(
-      "[Var] output shows all the 5's because var is a function scope not a block scope and the loop reuse a single variable binding like it's a single source of truth.And the delayed setTimeout fuction run after the loop is done and read the value of that variable.\n[let] output show value 0, 1, 2, 3, 4, because let is a block scope and javascript creates a new lexical binding (in simple term a new variable) so it can capture each itration \n[const] output shows the same result as let but used different loop for of loop because const also try to create new variable for each itration and const default behavior you can not redeclare the variable",
-    ),
-  1000,
-);
+// for (const key of [0, 1, 2, 3, 4]) {
+//   setTimeout(
+//     () => console.log(`[const] variable output: ${key}`),
+//     (key * 200) / 22,
+//   );
+// }
+// setTimeout(
+//   () =>
+//     console.log(
+//       "[Var] output shows all the 5's because var is a function scope not a block scope and the loop reuse a single variable binding like it's a single source of truth.And the delayed setTimeout fuction run after the loop is done and read the value of that variable.\n[let] output show value 0, 1, 2, 3, 4, because let is a block scope and javascript creates a new lexical binding (in simple term a new variable) so it can capture each itration \n[const] output shows the same result as let but used different loop for of loop because const also try to create new variable for each itration and const default behavior you can not redeclare the variable",
+//     ),
+//   1000,
+// );
 
 // Task 1.3 – Loop Behavior Test (Completed)
+
+// Section 2: Template Literals (Practical Usage)
+// Task 2.1 – Dynamic Message Generator
+// Create a function that accepts:
+// User name
+// Course name
+// Completion percentage
+// Return a message using template literals only that dynamically formats the message across multiple lines
+
+// Section 2: Template Literals (Practical Usage) (Started!)
+
+function ProgressTracker(name, cousreName, completionPercentage) {
+  return `Hello ${name}, your course ${cousreName} is (${completionPercentage}%) completed`;
+}
+console.log(ProgressTracker("Peter", "Agentic Ai", 40));
+
+// Section 2: Template Literals (Practical Usage) (Completed!)
