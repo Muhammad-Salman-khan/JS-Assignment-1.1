@@ -161,20 +161,38 @@
 // Log results and compare behavior.
 
 // Task 3.1 – Arrow vs Regular Function (Started!)
-const myObject = {
-  name: "Hachiman",
-  regularFuntion: function () {
-    return `Regular Function ${this.name}`;
-  },
-  arrowFunction: () => {
-    return `arrow Funtion ${this.name}`;
-  },
-};
-console.log(myObject.regularFuntion());
-console.log(myObject.arrowFunction());
+// const myObject = {
+//   name: "Hachiman",
+//   regularFuntion: function () {
+//     return `Regular Function ${this.name}`;
+//   },
+//   arrowFunction: () => {
+//     return `arrow Funtion ${this.name}`;
+//   },
+// };
+// console.log(myObject.regularFuntion());
+// console.log(myObject.arrowFunction());
 
-console.log(
-  `regular function can access this.value because javascript assign them at call time \n and for arrow function javascript never assign "this". it simpley inherate it from it surrounding scope`,
-);
+// console.log(
+//   `regular function can access this.value because javascript assign them at call time \n and for arrow function javascript never assign "this". it simpley inherate it from it surrounding scope`,
+// );
 
 // Task 3.1 – Arrow vs Regular Function (Completed!)
+
+/* Task 3.2 – Implicit vs Explicit Return
+Write arrow functions that:
+Use implicit return
+Use explicit return
+Apply them to an array transformation */
+
+// Task 3.2 – Implicit vs Explicit Return (Started!)
+const MyArr = [110, 103];
+const MyFun = MyArr.map((e) => e * 10);
+const arrowFuntionExplicte = MyArr.map((e) => {
+  const result = e + (100 * 4) / 5;
+  return result;
+});
+console.log(`implicit arrow Function`, MyFun);
+console.log(`Explicit Arrow Function`, arrowFuntionExplicte);
+
+// Task 3.2 – Implicit vs Explicit Return (Completed!)
