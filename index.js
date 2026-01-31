@@ -116,9 +116,39 @@
 
 // Section 2: Template Literals (Practical Usage) (Started!)
 
-function ProgressTracker(name, cousreName, completionPercentage) {
-  return `Hello ${name}, your course ${cousreName} is (${completionPercentage}%) completed`;
-}
-console.log(ProgressTracker("Peter", "Agentic Ai", 40));
+// function trackProgress(name, cousreName, completionPercentage) {
+//   return `Hello ${name}, your course ${cousreName} is (${completionPercentage}%) completed`;
+// }
+// console.log(trackProgress("Peter", "Agentic Ai", 40));
 
 // Section 2: Template Literals (Practical Usage) (Completed!)
+
+// Task 2.2 – Conditional Templates
+// Generate diferent template literal outputs based on:
+// Pass / Fail status
+// Grade boundaries
+// Avoid string concatenation completely.
+// Task 2.2 – Conditional Templates (Started!)
+const checkResult = (grade) => {
+  if (grade >= 92) {
+    return `Outstanding performance!.You passed with a Highest score:${grade}/100.`;
+  }
+  if (grade >= 80) {
+    return `Good job!.You passed with a good score:${grade}/100.`;
+  }
+  if (grade >= 60) {
+    return `You passed with a score:${grade}/100. Good`;
+  }
+  if (grade >= 50) {
+    return `You passed with a score:${grade}/100.need littel inprovement`;
+  }
+  if (grade >= 30) {
+    return `You Bariely Passed with a score:${grade}/100.Poor performance`;
+  }
+  if (grade < 30) {
+    return `You Failed with a score: ${grade}/100.`;
+  }
+};
+console.log(checkResult(95));
+
+// Task 2.2 – Conditional Templates (Completed!)
