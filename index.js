@@ -325,7 +325,7 @@ const tasklist = {
   },
 };
 for (const elem of tasklist) {
-  console.log(elem);
+  console.log(`Task id:${elem.id} \n Task: ${elem.task}`);
 }
 console.log(
   `so what we did here we create a obj and inside that object we create array objec for tasks and we wrote [Symbol.iterator] and inside we create a variable name taskLists and access it through this.tasks and also we create a variable i for iteration and we went inside next function and add a conditon if a  i < tasklist.length well retun value: taskLists[i++] and done false so it will iterator till the last index starting from 0 and we  went outside of the conditon and return  done true and value null done is boolean and value is array of object  `,
