@@ -390,5 +390,20 @@ for (const itrerate of AnalyzerObject) {
 // Log at least 3 unexpected behaviors you observed while building this
 // These logs must be based on your own runtime results, not defnitions
 // Add a fnal section called  Reflection Logs (Started!)
-console.log(` `);
+console.log(
+  `So when i was reading the problem i was sooo confused and didn't know what to do so i was staring this and asking chatgpt to tell me what i have to do without code  dry run so first he told me what thing's to do like making mental mode.`,
+);
+console.log(
+  `After that I already got the clue of it but i was questioning weather it will work or not i was thinking it will take array of obect inside object.than what thing's i need inside it then he give me clue what would be inside of object: kind, name ,value, scope so i took a hint.`,
+);
+console.log(
+  `and than i was dry runing the whole thing what i was thinking: 
+  first i will create object and inside that object i will create array object which have kind,name, value scope and fill with all of it with methods and string of what they do than under that i will write [Symbol.itrator]: function () { let i = o ; let arry = this.arrayObjecy return { next: () => { if (i < arrayObject.length) { return { done: false, value: arrayObject[i++] } return { value: undefined, done: true } } } } }
+  and after that i was asking chatgpt is it correct for my dry run he said yeah but you need to make some tweaks
+  and after making my iterator inside next i was using at first ternary operator it didn't worked so i was than using if conditon and it worked
+  and for the formatter i was still confused than chatgpt gave me the idea think of it like ESLint or other linter than i tweak it a bit and here's the whole And last Challange
+  that i completed
+  `,
+);
+
 // Add a fnal section called  Reflection Logs (Completed!)
