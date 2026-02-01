@@ -14,11 +14,11 @@
 //   var HappyDays = 1070;
 //   console.log(HappyDays);
 // }
+// console.log(HappyDays);
 // {
 //   let HappyDays = 5030;
 //   console.log(HappyDays);
 // }
-// console.log(HappyDays);
 // console.log(HappyDays);
 // Task 1.1 – Scope Exploration (Completed)
 // ----------------------------------------------------------
@@ -299,36 +299,96 @@ Apply them to an array transformation */
 // Simulate a real-world scenario (e.g., queue, playlist, task list) and iterate over it using  for..of .
 // Focus on clarity and structure.
 // Task 4.3 – Real-World Iterator Usage (Started!)
-const tasklist = {
-  tasks: [
-    { id: 1, task: "I need to make my body" },
-    { id: 2, task: "I need to buy a new Laptop" },
-    { id: 3, task: "I want to earn 10000's dollar" },
+// const tasklist = {
+//   tasks: [
+//     { id: 1, task: "I need to make my body" },
+//     { id: 2, task: "I need to buy a new Laptop" },
+//     { id: 3, task: "I want to earn 10000's dollar" },
+//   ],
+//   [Symbol.iterator]: function () {
+//     let i = 0;
+//     let taskLists = this.tasks;
+//     return {
+//       next() {
+//         if (i < taskLists.length) {
+//           return {
+//             value: taskLists[i++],
+//             done: false,
+//           };
+//         }
+//         return {
+//           done: true,
+//           value: undefined,
+//         };
+//       },
+//     };
+//   },
+// };
+// for (const elem of tasklist) {
+//   console.log(`Task id:${elem.id} \n Task: ${elem.task}`);
+// }
+// console.log(
+//   `so what we did here we create a obj and inside that object we create array objec for tasks and we wrote [Symbol.iterator] and inside we create a variable name taskLists and access it through this.tasks and also we create a variable i for iteration and we went inside next function and add a conditon if a  i < tasklist.length well retun value: taskLists[i++] and done false so it will iterator till the last index starting from 0 and we  went outside of the conditon and return  done true and value null done is boolean and value is array of object  `,
+// );
+
+// Task 4.3 – Real-World Iterator Usage (Completed!)
+
+// Final Challenge (Medium → Hard)
+// Build a Mini JavaScript Analyzer that:
+// Accepts a list of mixed variable declarations you design yourself
+// Uses iterators (not array helpers only)
+// Formats output using multi-line template literals
+// Uses arrow functions only where behavior is correct
+// Final Challenge (Medium → Hard)(Started!)
+const Formater = (formate) => {
+  return `
+  =====================   
+  Declaration Analysis
+  ======================
+  kind  : ${formate.kind}
+  Name  : ${formate.name}
+  Value : ${formate.value}
+  Scope : ${formate.scope} 
+  -----------------------------------
+  Rules
+  ------------------------------------
+  Redeclaration allowed: ${formate.kind === "var"}
+  ReAssignment allowed: ${formate.kind !== "const"}
+`;
+};
+
+const AnalyzerObject = {
+  listData: [
+    { kind: "let", name: "lexical", value: 1, scope: "block" },
+    { kind: "const", name: "Api_endpoint", value: String, scope: "block" },
+    { kind: "var", name: "lexical", value: true, scope: "function" },
   ],
   [Symbol.iterator]: function () {
-    let i = 0;
-    let taskLists = this.tasks;
+    let lists = this.listData;
+    let index = 0;
     return {
-      next() {
-        if (i < taskLists.length) {
+      next: () => {
+        if (index < lists.length) {
           return {
-            value: taskLists[i++],
+            value: this.listData[index++],
             done: false,
           };
         }
-        return {
-          done: true,
-          value: undefined,
-        };
+        return { value: undefined, done: true };
       },
     };
   },
 };
-for (const elem of tasklist) {
-  console.log(`Task id:${elem.id} \n Task: ${elem.task}`);
-}
-console.log(
-  `so what we did here we create a obj and inside that object we create array objec for tasks and we wrote [Symbol.iterator] and inside we create a variable name taskLists and access it through this.tasks and also we create a variable i for iteration and we went inside next function and add a conditon if a  i < tasklist.length well retun value: taskLists[i++] and done false so it will iterator till the last index starting from 0 and we  went outside of the conditon and return  done true and value null done is boolean and value is array of object  `,
-);
 
-// Task 4.3 – Real-World Iterator Usage (Completed!)
+for (const itrerate of AnalyzerObject) {
+  console.log(Formater(itrerate));
+}
+
+// Final Challenge (Medium → Hard)(Completed!)
+// Proof of Work Requirement:
+// Add a fnal section called  Reflection Logs
+// Log at least 3 unexpected behaviors you observed while building this
+// These logs must be based on your own runtime results, not defnitions
+// Add a fnal section called  Reflection Logs (Started!)
+console.log(` `);
+// Add a fnal section called  Reflection Logs (Completed!)
